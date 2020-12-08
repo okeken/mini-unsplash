@@ -39,20 +39,13 @@ export default {
 
 <style lang="scss" scoped>
 main {
-  max-width: 40rem;
-  height: 100vh;
-  padding: 1rem;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-
-  grid-gap: 1rem;
+  @include mainMixin;
 }
 
 .item {
   position: relative;
-  background: rgb(248, 245, 245);
-  animation: pulse-bg 5s infinite;
+  background: $primary-bg-color;
+  animation: $primary-animation;
   @keyframes pulse-bg {
     0% {
       background-color: #ddd;
@@ -72,7 +65,7 @@ main {
   bottom: 8%;
   left: 5%;
   height: 5%;
-  background: rgb(187, 185, 185);
+  background: $prim-bg-color;
   border-radius: 3px;
 }
 .name {
@@ -95,41 +88,13 @@ main {
 @media screen and (min-width: 768px) {
   //works for bigger screen
   main {
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(20, 1fr);
+    @include mainLargerScreen;
   }
 
-  .item:nth-child(1) {
-    grid-column: 1 / 5;
-    grid-row: 1 /8;
-  }
-  .item:nth-child(2) {
-    grid-column: 5/9;
-    grid-row: 1 /10;
-  }
-
-  .item:nth-child(3) {
-    grid-column: 9 / 13;
-    grid-row: 1 /9;
-  }
-
-  .item:nth-child(4) {
-    grid-column: 1/5;
-    grid-row: 8 /16;
-  }
-
-  .item:nth-child(5) {
-    grid-column: 5/9;
-    grid-row: 10 /17;
-  }
-
-  .item:nth-child(6) {
-    grid-column: 9/13;
-    grid-row: 9/17;
-  }
+  @include masonryGrid;
 
   .animateImg-enter-active {
-    transition: all 2s;
+    transition: $secondary-animation;
   }
 }
 </style>

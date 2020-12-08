@@ -72,12 +72,6 @@ export default {
 </script>
 
 <style lang="scss">
-$primary-black: #cccbcb8e;
-$primary-max-width: 47rem;
-@mixin translate {
-  transform: translateY(-3rem);
-}
-
 .data,
 .placeholder {
   @include translate();
@@ -99,7 +93,6 @@ $primary-max-width: 47rem;
   align-items: center;
 }
 body {
-  margin: 0rem;
   overflow-x: hidden;
 }
 

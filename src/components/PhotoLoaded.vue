@@ -63,37 +63,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$primary-bg-color: rgb(248, 245, 245);
-$primary-animation: pulse-bg 5s infinite;
-$primary-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-$font-size-small: 0.95rem;
-$main-white: whitesmoke;
-$max-width: 40rem;
-
 .loadingInfo {
   background: rgb(187, 185, 185);
   border-radius: 3px;
   color: transparent;
 }
-@mixin imageCss($border-radius) {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  border-radius: $border-radius;
-}
 
 main {
-  max-width: $max-width;
-  height: 100vh;
-  padding: 1rem;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 1rem;
+  @include mainMixin;
 }
 
 .item {
+  cursor: pointer;
   filter: brightness(0.8);
 }
 
@@ -105,6 +86,7 @@ img {
   position: relative;
   background: $primary-bg-color;
   animation: $primary-animation;
+  //min-height: 30rem;
   @keyframes pulse-bg {
     0% {
       background-color: #ddd;
@@ -125,45 +107,17 @@ img {
     margin: auto;
   }
   img {
-    height: 20rem;
+    height: 30rem;
   }
 }
 
 @media screen and (min-width: 768px) {
   //works for bigger screen
   main {
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(20, 1fr);
+    @include mainLargerScreen;
   }
 
-  .item:nth-child(1) {
-    grid-column: 1 / 5;
-    grid-row: 1 /8;
-  }
-  .item:nth-child(2) {
-    grid-column: 5/9;
-    grid-row: 1 /10;
-  }
-
-  .item:nth-child(3) {
-    grid-column: 9 / 13;
-    grid-row: 1 /9;
-  }
-
-  .item:nth-child(4) {
-    grid-column: 1/5;
-    grid-row: 8 /16;
-  }
-
-  .item:nth-child(5) {
-    grid-column: 5/9;
-    grid-row: 10 /17;
-  }
-
-  .item:nth-child(6) {
-    grid-column: 9/13;
-    grid-row: 9/17;
-  }
+  @include masonryGrid;
 
   .animateImg-enter-active {
     transition: all 2s;

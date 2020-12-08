@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="searchQuery(query)">
-    <div class="searchDiv">
-      <img class="search" alt="search icon" src="../assets/search.png" />
+    <div class="inputBx">
+      <img class="search" src="../assets/search.png" />
       <input
         type="text"
         v-model="query"
@@ -33,31 +33,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$primary-gray: gray;
-.searchInput {
-  outline: none;
-  border: 0;
+.inputBx {
+  background: white;
   border-radius: 3px;
-  padding: 1rem;
-  color: $primary-gray;
-  margin: 1rem;
-  flex: 1;
-  padding-left: 4rem;
+  display: flex;
+  max-width: 45rem;
+  margin: auto;
+  input {
+    border: none;
+    width: 100%;
+    margin: 0;
+    padding: 1rem 1rem;
+    outline: none;
+  }
 }
 
 .search {
   width: 0.8rem;
   height: 0.8rem;
   opacity: 0.44;
-}
-.searchDiv {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  .search {
-    position: absolute;
-    left: 7%;
-    bottom: 41%;
-  }
+  margin: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 </style>
