@@ -107,7 +107,7 @@ img {
     margin: auto;
   }
   img {
-    height: 30rem;
+    height: 20rem;
   }
 }
 
