@@ -51,13 +51,6 @@
   transform: $animation-pop-enter;
 }
 
-@media screen and (max-width: 767px) {
-  //works for smaller screen
-  .close {
-    right: -2%;
-    top: -8%;
-  }
-}
 .close {
   position: absolute;
   right: -20%;
@@ -83,4 +76,12 @@
 }
 .close:after {
   transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 767px) {
+  //works for smaller screen
+  .close {
+    right: -2%;
+    top: -8%;
+  }
 }
