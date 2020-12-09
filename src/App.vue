@@ -7,6 +7,7 @@
     :modaltoPar="appData.modalStatus"
     :imgtoPar="appData.imgStatus"
     :imgSrc="modalfromStore?.urls?.small"
+    @hideplaceholder="emitplaceholder"
   />
 
   <div class="inputDiv">
@@ -55,6 +56,9 @@ export default {
       appData.modalStatus = true;
       modalfromStore.value = l;
     }
+    function emitplaceholder() {
+      appData.imgStatus = false;
+    }
 
     function feedBack() {
       if (state.loading) return "Searching";
@@ -63,6 +67,7 @@ export default {
     return {
       state,
       emitModal,
+      emitplaceholder,
       appData,
       modalfromStore,
       feedBack,
@@ -72,34 +77,5 @@ export default {
 </script>
 
 <style lang="scss">
-.data,
-.placeholder {
-  @include translate();
-}
-.inputDiv {
-  background: $primary-black;
-  max-width: $primary-max-width;
-  margin: 0 auto;
-  padding: 3rem 4rem;
-}
-
-.disabledInput {
-  pointer-events: none;
-  opacity: 0.7;
-}
-.errorDiv {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-body {
-  overflow-x: hidden;
-}
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin-top: 30px;
-}
+@import "./assets/scss/_app.scss";
 </style>

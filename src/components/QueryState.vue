@@ -25,8 +25,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .query {
-  color: gray;
+  color: $primary-gray;
 }
 </style>

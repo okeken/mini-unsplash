@@ -1,0 +1,30 @@
+.data,
+.placeholder {
+  @include translate();
+}
+.inputDiv {
+  background: $primary-black;
+  max-width: $primary-max-width;
+  margin: 0 auto;
+  padding: 3rem 4rem;
+}
+
+.disabledInput {
+  pointer-events: none;
+  opacity: 0.7;
+}
+.errorDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  overflow-x: hidden;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 70px;
+}

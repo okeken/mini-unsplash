@@ -1,0 +1,84 @@
+.userInfo {
+  padding: 1.5rem 1.7rem;
+  .infoName {
+    font-size: 1.2rem;
+    color: $m-overlay-bg-color;
+    font-weight: 700;
+    color: $m-primary-black;
+  }
+  .location {
+    margin-top: 0.5rem;
+    font-size: 0.6rem;
+    font-weight: 600;
+    opacity: 0.7;
+    color: $secondary-black;
+  }
+}
+.modal img {
+  @include imageModal;
+}
+
+.modal {
+  @include modalStyle($m-bg-color, $m-max-width, $m-bg-color);
+}
+.modal h1 {
+  margin: 0 0 1rem;
+}
+
+.modal-overlay {
+  @include modalOverlay($m-overlay-bg-color);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: $main-transit-opacity;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.pop-enter-active,
+.pop-leave-active,
+.popi-leave-active {
+  transition: $animation-pop-enter-act;
+}
+
+.pop-enter,
+.pop-leave-to {
+  opacity: 0;
+  transform: $animation-pop-enter;
+}
+
+.popi-leave-to {
+  transform: scale(0);
+  transform: $animation-pop-enter2;
+}
+
+.close {
+  position: absolute;
+  right: -20%;
+  top: -10%;
+  width: 15px;
+  height: 15px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before,
+.close:after {
+  position: absolute;
+  content: " ";
+  height: 15px;
+  width: 1.5px;
+  background-color: $main-white;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}

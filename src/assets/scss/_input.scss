@@ -1,0 +1,23 @@
+.inputBx {
+  background: white;
+  border-radius: 3px;
+  display: flex;
+  max-width: 45rem;
+  margin: auto;
+  input {
+    border: none;
+    width: 100%;
+    margin: 0;
+    padding: 1rem 1rem;
+    outline: none;
+  }
+}
+
+.search {
+  width: 0.8rem;
+  height: 0.8rem;
+  opacity: 0.44;
+  margin: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
